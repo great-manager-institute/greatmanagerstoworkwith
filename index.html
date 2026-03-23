@@ -1,0 +1,299 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--font-sans);background:var(--color-background-tertiary);}
+
+.navbar{background:var(--color-background-primary);border-bottom:0.5px solid var(--color-border-tertiary);padding:13px 24px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-size:14px;font-weight:500;color:var(--color-text-primary);}
+.nav-logo span{color:#534AB7;}
+.nav-links{display:flex;gap:18px;}
+.nav-link{font-size:12px;color:var(--color-text-secondary);cursor:pointer;}
+.nav-cta{font-size:12px;font-weight:500;background:#534AB7;color:#EEEDFE;border:none;border-radius:20px;padding:6px 16px;cursor:pointer;}
+
+.hero{background:#EEEDFE;padding:44px 32px 36px;text-align:center;border-bottom:0.5px solid #CECBF6;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:6px;background:#fff;border:0.5px solid #CECBF6;border-radius:20px;padding:4px 14px;font-size:11px;font-weight:500;color:#534AB7;margin-bottom:16px;}
+.hero-dot{width:6px;height:6px;border-radius:50%;background:#534AB7;flex-shrink:0;}
+.hero-h1{font-size:28px;font-weight:500;color:#26215C;line-height:1.25;margin-bottom:10px;}
+.hero-sub{font-size:13px;color:#534AB7;max-width:500px;margin:0 auto 20px;line-height:1.65;}
+
+.what-is{background:#fff;border:0.5px solid #CECBF6;border-radius:12px;max-width:540px;margin:0 auto 24px;padding:14px 18px;text-align:left;display:flex;gap:12px;align-items:flex-start;}
+.what-icon{width:28px;height:28px;border-radius:8px;background:#EEEDFE;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+.what-icon svg{width:14px;height:14px;}
+.what-title{font-size:12px;font-weight:500;color:#26215C;margin-bottom:4px;}
+.what-body{font-size:11px;color:#534AB7;line-height:1.55;}
+
+.hero-stats{display:flex;justify-content:center;gap:28px;margin-bottom:22px;}
+.hs-num{font-size:20px;font-weight:500;color:#26215C;}
+.hs-lbl{font-size:10px;color:#534AB7;margin-top:2px;}
+.hs-div{width:0.5px;background:#CECBF6;}
+.hero-btns{display:flex;gap:10px;justify-content:center;}
+.btn-p{background:#534AB7;color:#EEEDFE;border:none;border-radius:8px;padding:9px 20px;font-size:12px;font-weight:500;cursor:pointer;}
+.btn-s{background:transparent;color:#534AB7;border:0.5px solid #534AB7;border-radius:8px;padding:9px 20px;font-size:12px;cursor:pointer;}
+
+.main{padding:28px 28px;}
+
+.filter-bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:22px;}
+.search-box{height:34px;border:0.5px solid var(--color-border-secondary);border-radius:8px;padding:0 12px;font-size:12px;background:var(--color-background-primary);color:var(--color-text-primary);width:200px;}
+.chip{font-size:11px;border:0.5px solid var(--color-border-secondary);border-radius:20px;padding:5px 13px;color:var(--color-text-secondary);background:var(--color-background-primary);cursor:pointer;}
+.chip.on{background:#EEEDFE;border-color:#AFA9EC;color:#3C3489;}
+.total-label{margin-left:auto;font-size:11px;color:var(--color-text-tertiary);}
+
+.co-group{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:12px;margin-bottom:14px;overflow:hidden;}
+.co-header{display:flex;align-items:center;gap:12px;padding:14px 16px;cursor:pointer;user-select:none;}
+.co-header:hover{background:var(--color-background-secondary);}
+.co-logo{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;flex-shrink:0;}
+.co-info{flex:1;}
+.co-name{font-size:14px;font-weight:500;color:var(--color-text-primary);}
+.co-meta{font-size:11px;color:var(--color-text-secondary);margin-top:2px;}
+.co-badge{font-size:10px;font-weight:500;padding:3px 10px;border-radius:20px;margin-left:8px;}
+.co-count{font-size:11px;color:var(--color-text-tertiary);margin-right:6px;}
+.co-arrow{font-size:12px;color:var(--color-text-tertiary);transition:transform 0.2s;}
+.co-arrow.open{transform:rotate(180deg);}
+
+.managers-panel{padding:0 16px 16px;}
+.managers-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;}
+.mgr-card{background:var(--color-background-secondary);border-radius:10px;border:0.5px solid var(--color-border-tertiary);padding:12px 10px;text-align:center;}
+.mgr-avatar{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;margin:0 auto 8px;}
+.mgr-name{font-size:12px;font-weight:500;color:var(--color-text-primary);line-height:1.3;}
+.mgr-role{font-size:10px;color:var(--color-text-secondary);margin-top:3px;line-height:1.3;}
+.show-more-btn{margin-top:10px;font-size:11px;color:#534AB7;background:transparent;border:0.5px solid #AFA9EC;border-radius:20px;padding:5px 16px;cursor:pointer;display:block;width:100%;}
+
+.divider-line{border:none;border-top:0.5px solid var(--color-border-tertiary);}
+
+.participate-section{background:#EEEDFE;border-top:0.5px solid #CECBF6;padding:36px 32px;}
+.participate-inner{max-width:560px;margin:0 auto;text-align:center;}
+.part-title{font-size:20px;font-weight:500;color:#26215C;margin-bottom:8px;}
+.part-sub{font-size:13px;color:#534AB7;margin-bottom:22px;line-height:1.6;}
+.steps-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:20px;text-align:left;}
+.step-card{background:#fff;border:0.5px solid #CECBF6;border-radius:10px;padding:14px;}
+.step-num{font-size:20px;font-weight:500;color:#534AB7;}
+.step-t{font-size:12px;font-weight:500;color:#26215C;margin-top:4px;}
+.step-d{font-size:11px;color:#534AB7;margin-top:3px;line-height:1.4;}
+.form-card{background:var(--color-background-primary);border:0.5px solid #CECBF6;border-radius:12px;padding:20px;text-align:left;}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;}
+.form-label{font-size:11px;color:var(--color-text-secondary);margin-bottom:4px;}
+.form-input{width:100%;height:34px;border:0.5px solid var(--color-border-secondary);border-radius:8px;padding:0 10px;font-size:12px;background:var(--color-background-primary);color:var(--color-text-primary);}
+.form-submit{width:100%;background:#534AB7;color:#EEEDFE;border:none;border-radius:8px;padding:10px;font-size:13px;font-weight:500;cursor:pointer;margin-top:4px;}
+
+.footer{background:var(--color-background-primary);border-top:0.5px solid var(--color-border-tertiary);padding:20px 32px;display:flex;align-items:center;justify-content:space-between;}
+.footer-logo{font-size:13px;font-weight:500;color:var(--color-text-primary);}
+.footer-logo span{color:#534AB7;}
+.footer-copy{font-size:11px;color:var(--color-text-tertiary);}
+</style>
+
+<div class="navbar">
+  <div class="nav-logo">Great Manager <span>Institute®</span></div>
+  <div class="nav-links">
+    <span class="nav-link">Assessment</span>
+    <span class="nav-link">Development</span>
+    <span class="nav-link">Recognition</span>
+    <span class="nav-link">Events</span>
+  </div>
+  <button class="nav-cta">Contact us</button>
+</div>
+
+<div class="hero">
+  <div class="hero-eyebrow"><div class="hero-dot"></div>2024 cohort — now certified</div>
+  <div class="hero-h1">Great Manager to Work With®</div>
+  <div class="hero-sub">Celebrating every manager who earned this recognition from their own team — through India's largest people manager study.</div>
+
+  <div class="what-is">
+    <div class="what-icon">
+      <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7" stroke="#534AB7" stroke-width="1.2"/><path d="M8 7v5M8 5v1" stroke="#534AB7" stroke-width="1.2" stroke-linecap="round"/></svg>
+    </div>
+    <div>
+      <div class="what-title">What is the GMTW recognition?</div>
+      <div class="what-body">The Great Manager to Work With® (GMTW) certification is awarded to managers who receive exceptional feedback scores from their direct reports in the Great People Manager Study® — India's largest study of its kind. It is not self-nominated. Your team decides.</div>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div style="text-align:center"><div class="hs-num">1,200+</div><div class="hs-lbl">Managers certified</div></div>
+    <div class="hs-div"></div>
+    <div style="text-align:center"><div class="hs-num">100+</div><div class="hs-lbl">Companies</div></div>
+    <div class="hs-div"></div>
+    <div style="text-align:center"><div class="hs-num">15+</div><div class="hs-lbl">Industries</div></div>
+    <div class="hs-div"></div>
+    <div style="text-align:center"><div class="hs-num">6th</div><div class="hs-lbl">Edition</div></div>
+  </div>
+  <div class="hero-btns">
+    <button class="btn-p">See all certified managers</button>
+    <button class="btn-s">Get your team recognised</button>
+  </div>
+</div>
+
+<div class="main">
+  <div class="filter-bar">
+    <input class="search-box" type="text" placeholder="Search manager or company..." id="searchInput" oninput="applyFilters()">
+    <span class="chip on" onclick="setIndustry(this,'all')">All industries</span>
+    <span class="chip" onclick="setIndustry(this,'bfsi')">BFSI</span>
+    <span class="chip" onclick="setIndustry(this,'it')">IT / Tech</span>
+    <span class="chip" onclick="setIndustry(this,'mfg')">Manufacturing</span>
+    <span class="chip" onclick="setIndustry(this,'fmcg')">FMCG</span>
+    <span class="total-label" id="totalLabel">4 companies · 1,200+ managers</span>
+  </div>
+
+  <div id="groupsContainer"></div>
+</div>
+
+<div class="participate-section">
+  <div class="participate-inner">
+    <div class="part-title">Get your managers recognised</div>
+    <div class="part-sub">Join 100+ companies who've used the Great People Manager Study® to identify and celebrate their best people managers.</div>
+    <div class="steps-row">
+      <div class="step-card"><div class="step-num">1</div><div class="step-t">Register</div><div class="step-d">Organisations with 500+ employees</div></div>
+      <div class="step-card"><div class="step-num">2</div><div class="step-t">Survey</div><div class="step-d">Min. 70% grand mean across all employees</div></div>
+      <div class="step-card"><div class="step-num">3</div><div class="step-t">Recognise</div><div class="step-d">30% of managers qualify as GMTW</div></div>
+    </div>
+    <div class="form-card">
+      <div style="font-size:14px;font-weight:500;color:var(--color-text-primary);margin-bottom:14px;">Express your interest</div>
+      <div class="form-grid">
+        <div><div class="form-label">First name</div><input class="form-input" type="text" placeholder="Aarav"></div>
+        <div><div class="form-label">Last name</div><input class="form-input" type="text" placeholder="Shah"></div>
+        <div><div class="form-label">Designation</div><input class="form-input" type="text" placeholder="CHRO"></div>
+        <div><div class="form-label">Organisation</div><input class="form-input" type="text" placeholder="Company name"></div>
+        <div><div class="form-label">Phone</div><input class="form-input" type="text" placeholder="+91"></div>
+        <div><div class="form-label">Email</div><input class="form-input" type="text" placeholder="you@company.com"></div>
+      </div>
+      <button class="form-submit">Submit</button>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="footer-logo">Great Manager <span>Institute®</span></div>
+  <div class="footer-copy">© 2026 Great Manager Institute. All rights reserved.</div>
+</div>
+
+<script>
+var DATA = [
+  {
+    id:'hdfc', name:'HDFC Life Insurance', industry:'bfsi', indLabel:'BFSI',
+    logoBg:'#E6F1FB', logoColor:'#185FA5', logoLetter:'H',
+    badgeBg:'#E6F1FB', badgeColor:'#185FA5',
+    ceo:'Vibhash Naik', ceoRole:'CHRO',
+    managers:[
+      {initials:'PS',bg:'#EEEDFE',tc:'#3C3489',name:'Priya Sharma',role:'VP, People & Culture'},
+      {initials:'RK',bg:'#E1F5EE',tc:'#085041',name:'Rohan Kulkarni',role:'Sr. Manager, Operations'},
+      {initials:'AM',bg:'#FAEEDA',tc:'#633806',name:'Ananya Mehta',role:'Regional HR Head'},
+      {initials:'VD',bg:'#EEEDFE',tc:'#3C3489',name:'Varun Desai',role:'Sales Manager'},
+      {initials:'SK',bg:'#E1F5EE',tc:'#085041',name:'Smita Kadam',role:'L&D Manager'},
+      {initials:'NP',bg:'#FAEEDA',tc:'#633806',name:'Nikhil Patil',role:'Finance Manager'},
+      {initials:'DG',bg:'#EEEDFE',tc:'#3C3489',name:'Deepa Gupta',role:'Branch Manager'},
+      {initials:'AJ',bg:'#E1F5EE',tc:'#085041',name:'Aditya Joshi',role:'Customer Success Lead'},
+      {initials:'MR',bg:'#FAEEDA',tc:'#633806',name:'Meera Rao',role:'Compliance Head'},
+      {initials:'KS',bg:'#EEEDFE',tc:'#3C3489',name:'Kiran Shah',role:'IT Manager'},
+      {initials:'PB',bg:'#E1F5EE',tc:'#085041',name:'Pooja Bhat',role:'HR Manager'},
+      {initials:'SN',bg:'#FAEEDA',tc:'#633806',name:'Sanjay Nair',role:'Zonal Head'}
+    ]
+  },
+  {
+    id:'infosys', name:'Infosys Limited', industry:'it', indLabel:'IT / Tech',
+    logoBg:'#E1F5EE', logoColor:'#085041', logoLetter:'I',
+    badgeBg:'#E1F5EE', badgeColor:'#085041',
+    ceo:'Nandan Nilekani', ceoRole:'Chairman',
+    managers:[
+      {initials:'RM',bg:'#E1F5EE',tc:'#085041',name:'Rahul Mehta',role:'Delivery Head'}
+    ]
+  },
+  {
+    id:'zensar', name:'Zensar Technologies', industry:'it', indLabel:'IT / Tech',
+    logoBg:'#EEEDFE', logoColor:'#3C3489', logoLetter:'Z',
+    badgeBg:'#EEEDFE', badgeColor:'#3C3489',
+    ceo:'Ajay Bhutoria', ceoRole:'CEO',
+    managers:[
+      {initials:'KN',bg:'#EEEDFE',tc:'#3C3489',name:'Karthik Nair',role:'Engineering Manager'},
+      {initials:'LP',bg:'#E1F5EE',tc:'#085041',name:'Lakshmi Pillai',role:'QA Lead'},
+      {initials:'VJ',bg:'#FAEEDA',tc:'#633806',name:'Vikram Jain',role:'Project Manager'}
+    ]
+  },
+  {
+    id:'bluestar', name:'Blue Star Limited', industry:'mfg', indLabel:'Manufacturing',
+    logoBg:'#E1F5EE', logoColor:'#085041', logoLetter:'B',
+    badgeBg:'#FAEEDA', badgeColor:'#633806',
+    ceo:'B Thiagarajan', ceoRole:'MD',
+    managers:[
+      {initials:'SR',bg:'#E1F5EE',tc:'#085041',name:'Sunita Rao',role:'Plant HR Manager'},
+      {initials:'GT',bg:'#FAEEDA',tc:'#633806',name:'Ganesh Thakur',role:'Production Manager'}
+    ]
+  }
+];
+
+var activeIndustry = 'all';
+var expandedGroups = {};
+
+function setIndustry(el, val) {
+  activeIndustry = val;
+  document.querySelectorAll('.chip').forEach(function(c){ c.classList.remove('on'); });
+  el.classList.add('on');
+  applyFilters();
+}
+
+function applyFilters() {
+  var query = (document.getElementById('searchInput').value || '').toLowerCase().trim();
+  var container = document.getElementById('groupsContainer');
+  container.innerHTML = '';
+  var visibleCos = 0;
+
+  DATA.forEach(function(co) {
+    if (activeIndustry !== 'all' && co.industry !== activeIndustry) return;
+    var filteredMgrs = co.managers.filter(function(m) {
+      if (!query) return true;
+      return m.name.toLowerCase().indexOf(query) > -1 || co.name.toLowerCase().indexOf(query) > -1;
+    });
+    if (filteredMgrs.length === 0 && query) return;
+    visibleCos++;
+
+    var isOpen = expandedGroups[co.id] !== false;
+    var showLimit = 8;
+    var showingAll = expandedGroups[co.id + '_all'] || filteredMgrs.length <= showLimit;
+
+    var mgrsToShow = showingAll ? filteredMgrs : filteredMgrs.slice(0, showLimit);
+
+    var mgrCards = mgrsToShow.map(function(m) {
+      return '<div class="mgr-card"><div class="mgr-avatar" style="background:'+m.bg+';color:'+m.tc+';">'+m.initials+'</div><div class="mgr-name">'+m.name+'</div><div class="mgr-role">'+m.role+'</div></div>';
+    }).join('');
+
+    var showMoreBtn = '';
+    if (!showingAll && filteredMgrs.length > showLimit) {
+      showMoreBtn = '<button class="show-more-btn" onclick="showAll(\''+co.id+'\')">Show all '+filteredMgrs.length+' managers from '+co.name+'</button>';
+    }
+
+    var panelStyle = isOpen ? '' : 'display:none;';
+    var arrowClass = isOpen ? 'co-arrow open' : 'co-arrow';
+
+    var html = '<div class="co-group" id="group-'+co.id+'">'
+      + '<div class="co-header" onclick="toggleGroup(\''+co.id+'\')">'
+      + '<div class="co-logo" style="background:'+co.logoColor+';color:#fff;">'+co.logoLetter+'</div>'
+      + '<div class="co-info">'
+      + '<div class="co-name">'+co.name+'<span class="co-badge" style="background:'+co.badgeBg+';color:'+co.badgeColor+';">'+co.indLabel+'</span></div>'
+      + '<div class="co-meta">'+co.ceo+' · '+co.ceoRole+' &nbsp;|&nbsp; '+filteredMgrs.length+' certified manager'+(filteredMgrs.length!==1?'s':'')+'</div>'
+      + '</div>'
+      + '<span class="co-count">'+filteredMgrs.length+' GMTWs</span>'
+      + '<span class="'+arrowClass+'" id="arrow-'+co.id+'">&#9660;</span>'
+      + '</div>'
+      + '<div class="managers-panel" id="panel-'+co.id+'" style="'+panelStyle+'">'
+      + '<div class="managers-grid">'+mgrCards+'</div>'
+      + showMoreBtn
+      + '</div>'
+      + '</div>';
+
+    container.innerHTML += html;
+  });
+
+  var totalLabel = visibleCos + ' compan' + (visibleCos === 1 ? 'y' : 'ies') + ' · 1,200+ managers';
+  document.getElementById('totalLabel').textContent = totalLabel;
+}
+
+function toggleGroup(id) {
+  expandedGroups[id] = expandedGroups[id] === false ? true : false;
+  applyFilters();
+}
+
+function showAll(id) {
+  expandedGroups[id + '_all'] = true;
+  applyFilters();
+}
+
+applyFilters();
+</script>
