@@ -95,6 +95,26 @@ body{font-family:'Poppins',sans-serif;background:#fff;color:#111;}
 .footer{background:#111;padding:24px 40px;display:flex;align-items:center;justify-content:space-between;}
 .footer-logo img{height:28px;width:auto;filter:brightness(0) invert(1);}
 .footer-copy{font-size:11px;color:#888;}
+
+.blinking-dot {
+  color: #d94436; /* This matches the red color in your screenshot */
+  margin-right: 8px;
+  font-size: 14px;
+  animation: blink-animation 1s steps(5, start) infinite;
+  -webkit-animation: blink-animation 1s steps(5, start) infinite;
+}
+
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+} 
 </style>
 </head>
 <body>
@@ -107,7 +127,7 @@ body{font-family:'Poppins',sans-serif;background:#fff;color:#111;}
 </div>
 
 <div class="hero">
-  <div class="hero-eyebrow">2026 cohort — now certified</div>
+  <div class="hero-eyebrow"><span class="blinking-dot">●</span>2026 cohort — now certified</div>
   <div class="hero-h1">Great Manager to Work With®</div>
   <div class="hero-sub">Celebrating every manager who earned this recognition from their own team — through India's largest people manager study.</div>
 
