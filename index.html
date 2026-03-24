@@ -286,7 +286,7 @@ function applyFilters() {
     if (filteredMgrs.length === 0 && query) return;
     visibleCos++;
 
-    var isOpen = expandedGroups[co.id] !== true;
+    var isOpen = expandedGroups[co.id] === true;
     var showLimit = 8;
     var showingAll = expandedGroups[co.id + '_all'] || filteredMgrs.length <= showLimit;
     var mgrsToShow = showingAll ? filteredMgrs : filteredMgrs.slice(0, showLimit);
