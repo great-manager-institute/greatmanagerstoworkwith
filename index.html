@@ -167,7 +167,7 @@ body{font-family:'Poppins',sans-serif;background:#fff;color:#111;}
     <input class="search-box" type="text" placeholder="Search manager or company..." id="searchInput" oninput="applyFilters()">
     <span class="chip on" onclick="setIndustry(this,'all')">All industries</span>
     <span class="chip" onclick="setIndustry(this,'bfsi')">BFSI</span>
-    <span class="chip" onclick="setIndustry(this,'it')">IT / Tech</span>
+    <span class="chip" onclick="setIndustry(this,'it')">IT/ITes</span>
     <span class="chip" onclick="setIndustry(this,'mfg')">Manufacturing</span>
     <span class="chip" onclick="setIndustry(this,'retail')">Retail</span>
     <span class="chip" onclick="setIndustry(this,'hp')">Healthcare & Pharma</span>
@@ -261,6 +261,54 @@ var DATA = [
       {initials:'PL',bg:'#fff4f4',tc:'#c9151f',name:'Amit Sehgal',role:'Jan 2026 - Jan 2027', img:'https://raw.githubusercontent.com/great-manager-institute/greatmanagerstoworkwith/refs/heads/main/photos/TESCO%20Bengaluru/Amit_Sehgal.jpg'},
       {initials:'PL',bg:'#fff4f4',tc:'#c9151f',name:'Mudit Agarawal',role:'Jan 2026 - Jan 2027', img:'https://raw.githubusercontent.com/great-manager-institute/greatmanagerstoworkwith/refs/heads/main/photos/TESCO%20Bengaluru/Mudit_Agarawal.png'},
       {initials:'PL',bg:'#fff4f4',tc:'#c9151f',name:'Rajan Pathak',role:'Jan 2026 - Jan 2027', img:'https://raw.githubusercontent.com/great-manager-institute/greatmanagerstoworkwith/refs/heads/main/photos/TESCO%20Bengaluru/Rajan_Pathak.jpeg'}
+    ]
+  },
+  {
+    id:'lumina', name:'Lumina Datamatics Limited', industry:'it', indLabel:'IT/ITes',
+    logoUrl: 'https://raw.githubusercontent.com/great-manager-institute/greatmanagerstoworkwith/refs/heads/main/photos/Lumina%20Datamatics%20Limited/Lumina_Logo.png',
+    logoBg:'#ffffff', badgeBg:'#f0effe', badgeColor:'#534AB7',
+    ceo:'Sameer Kanodia', ceoRole:'MD & CEO',
+    managers:[
+      {initials:'PL',bg:'#fff4f4',tc:'#c9151f',name:'Madhan Mohan G',role:'Jan 2026 - Jan 2027', img:'https://raw.githubusercontent.com/great-manager-institute/greatmanagerstoworkwith/refs/heads/main/photos/Lumina%20Datamatics%20Limited/Madhan_Mohan_G.jpg'},
+      {initials:'PL',bg:'#fff4f4',tc:'#c9151f',name:'Santosh Shenoy',role:'Jan 2026 - Jan 2027', img:'https://raw.githubusercontent.com/great-manager-institute/greatmanagerstoworkwith/refs/heads/main/photos/Lumina%20Datamatics%20Limited/Santosh_Shenoy.jpg'}
+    ]
+  },
+  {
+    id:'uno', name:'Uno Minda Limited', industry:'mfg', indLabel:'Manufacturing',
+    logoUrl: 'https://raw.githubusercontent.com/great-manager-institute/greatmanagerstoworkwith/refs/heads/main/photos/Uno%20Minda%20Limited/Uno_Minda_Logo.png',
+    logoBg:'#ffffff', badgeBg:'#f0effe', badgeColor:'#534AB7',
+    ceo:'Amit Jain', ceoRole:'CEO & Executive Director',
+    managers:[
+      {initials:'PL',bg:'#fff4f4',tc:'#c9151f',name:'Rahul Joshi',role:'Jan 2026 - Jan 2027', img:'https://raw.githubusercontent.com/great-manager-institute/greatmanagerstoworkwith/refs/heads/main/photos/Uno%20Minda%20Limited/Rahul_Joshi.jpg'},
+      {initials:'PL',bg:'#fff4f4',tc:'#c9151f',name:'Rohan Mane',role:'Jan 2026 - Jan 2027', img:'https://raw.githubusercontent.com/great-manager-institute/greatmanagerstoworkwith/refs/heads/main/photos/Uno%20Minda%20Limited/Rohan_Mane.jpg'},
+      {initials:'PL',bg:'#fff4f4',tc:'#c9151f',name:'Sadeesh Ramachandran',role:'Jan 2026 - Jan 2027', img:'https://raw.githubusercontent.com/great-manager-institute/greatmanagerstoworkwith/refs/heads/main/photos/Uno%20Minda%20Limited/Sadeesh_Ramachandran.png'},
+      {initials:'PL',bg:'#fff4f4',tc:'#c9151f',name:'Saravanan Kathirvelu',role:'Jan 2026 - Jan 2027', img:'https://raw.githubusercontent.com/great-manager-institute/greatmanagerstoworkwith/refs/heads/main/photos/Uno%20Minda%20Limited/Saravanan_Kathirvelu.jpg'}
+    ]
+  },
+  {
+    id:'zenex', name:'Zenex Animal Health India Pvt. Ltd.', industry:'hp', indLabel:'Healthcare & Pharma',
+    logoUrl: 'https://raw.githubusercontent.com/great-manager-institute/greatmanagerstoworkwith/refs/heads/main/photos/Zenex%20Animal%20Health%20India/ZENEX_Logo.png',
+    logoBg:'#ffffff', badgeBg:'#f0effe', badgeColor:'#534AB7',
+    ceo:'Dr. Arun Atrey', ceoRole:'MD & CEO',
+    managers:[
+      {initials:'PL',bg:'#fff4f4',tc:'#c9151f',name:'Mehul Shah',role:'Jan 2026 - Jan 2027', img:'https://raw.githubusercontent.com/great-manager-institute/greatmanagerstoworkwith/refs/heads/main/photos/Zenex%20Animal%20Health%20India/Mehul_Shah.jpg'},
+      {initials:'PL',bg:'#fff4f4',tc:'#c9151f',name:'Sanjeet Rana',role:'Jan 2026 - Jan 2027', img:'https://raw.githubusercontent.com/great-manager-institute/greatmanagerstoworkwith/refs/heads/main/photos/Zenex%20Animal%20Health%20India/SanjeetRana.jpg'},
+      {initials:'PL',bg:'#fff4f4',tc:'#c9151f',name:'Saumil Gandhi',role:'Jan 2026 - Jan 2027', img:'https://raw.githubusercontent.com/great-manager-institute/greatmanagerstoworkwith/refs/heads/main/photos/Zenex%20Animal%20Health%20India/Saumil_Gandhi.jpg'}
+    ]
+  },
+  {
+    id:'version1', name:'Version 1 Services Pvt. Ltd.', industry:'ps', indLabel:'Professional Services',
+    logoUrl: 'https://raw.githubusercontent.com/great-manager-institute/greatmanagerstoworkwith/refs/heads/main/photos/Version%201%20Services%20Private%20Limited/Version1_logo.webp',
+    logoBg:'#ffffff', badgeBg:'#f0effe', badgeColor:'#534AB7',
+    ceo:'Ajay Bhutoria', ceoRole:'CEO',
+    managers:[
+      {initials:'PL',bg:'#fff4f4',tc:'#c9151f',name:'Abhishek Bhattacharjee',role:'Jan 2026 - Jan 2027', img:'https://raw.githubusercontent.com/great-manager-institute/greatmanagerstoworkwith/refs/heads/main/photos/Version%201%20Services%20Private%20Limited/Abhishek_Bhattacharjee.jpg'},
+      {initials:'PL',bg:'#fff4f4',tc:'#c9151f',name:'Himanshu Vashisht',role:'Jan 2026 - Jan 2027', img:'https://raw.githubusercontent.com/great-manager-institute/greatmanagerstoworkwith/refs/heads/main/photos/Version%201%20Services%20Private%20Limited/Himanshu_Vashisht.jpg'},
+      {initials:'PL',bg:'#fff4f4',tc:'#c9151f',name:'Mayank Nayyar Singh',role:'Jan 2026 - Jan 2027', img:'https://raw.githubusercontent.com/great-manager-institute/greatmanagerstoworkwith/refs/heads/main/photos/Version%201%20Services%20Private%20Limited/Mayank_Nayyar_Singh.jpg'},
+      {initials:'PL',bg:'#fff4f4',tc:'#c9151f',name:'Mohtaseem Shaikh',role:'Jan 2026 - Jan 2027', img:'https://raw.githubusercontent.com/great-manager-institute/greatmanagerstoworkwith/refs/heads/main/photos/Version%201%20Services%20Private%20Limited/Mohtaseem_Shaikh.JPG'},
+      {initials:'PL',bg:'#fff4f4',tc:'#c9151f',name:'Rakesh Sinha',role:'Jan 2026 - Jan 2027', img:'https://raw.githubusercontent.com/great-manager-institute/greatmanagerstoworkwith/refs/heads/main/photos/Version%201%20Services%20Private%20Limited/Rakesh_Sinha.jpg'},
+      {initials:'PL',bg:'#fff4f4',tc:'#c9151f',name:'Shruti Bhat',role:'Jan 2026 - Jan 2027', img:'https://raw.githubusercontent.com/great-manager-institute/greatmanagerstoworkwith/refs/heads/main/photos/Version%201%20Services%20Private%20Limited/Shruti_Bhat.jpg'},
+      {initials:'PL',bg:'#fff4f4',tc:'#c9151f',name:'Siddharth Tomar',role:'Jan 2026 - Jan 2027', img:'https://raw.githubusercontent.com/great-manager-institute/greatmanagerstoworkwith/refs/heads/main/photos/Version%201%20Services%20Private%20Limited/Siddharth_Tomar.jpg'}
     ]
   },
 ];
