@@ -97,24 +97,26 @@ body{font-family:'Poppins',sans-serif;background:#fff;color:#111;}
 .footer-copy{font-size:11px;color:#888;}
 
 .blinking-dot {
-  color: #d94436; /* This matches the red color in your screenshot */
+  color: #d94436; /* Matches your cohort text color */
   margin-right: 8px;
-  font-size: 14px;
-  animation: blink-animation 1s steps(5, start) infinite;
-  -webkit-animation: blink-animation 1s steps(5, start) infinite;
+  font-size: 18px; /* Slightly larger makes the fade more noticeable */
+  vertical-align: middle;
+  animation: subtle-fade 2s ease-in-out infinite;
+  -webkit-animation: subtle-fade 2s ease-in-out infinite;
 }
 
-@keyframes blink-animation {
-  to {
-    visibility: hidden;
-  }
+@keyframes subtle-fade {
+  0%   { opacity: 1; }   /* Fully visible */
+  50%  { opacity: 0.2; } /* Faded out but not gone */
+  100% { opacity: 1; }   /* Fully visible again */
 }
 
-@-webkit-keyframes blink-animation {
-  to {
-    visibility: hidden;
-  }
-} 
+/* For Safari/Mac compatibility */
+@-webkit-keyframes subtle-fade {
+  0%   { opacity: 1; }
+  50%  { opacity: 0.2; }
+  100% { opacity: 1; }
+}
 </style>
 </head>
 <body>
